@@ -1,0 +1,117 @@
+
+    2
+  3   4
+ 5      8
+ 
+ struct node
+ {
+     int data;
+     struict node left, right;
+ };
+ typedef struct node Node;
+
+/*
+    sum = 2->5->10
+    sumLeft = 10
+*/
+vector<pair<Node *, int>> traverse(Node *root, int sum, vector<pair<Node *, int>> ds)
+{
+    if(root)
+        return NULL;
+    if(root->left == NULL && root->right == NULL)
+    {
+        sum+=root->data;
+        vector<pair<Node *, int>> tempDS;
+        tempDS.push_back(pair<root, sum>);
+        return tempDS;
+    }
+    else
+    {
+        int sumLeft = 0, sumRight = 0;
+        vector<pair<Node *, int>> tempDSLeft, tempDSRight;
+        tempDSLeft = NULL;
+        tempDSRight = NULL;
+        
+        sum+=root->data;
+
+        //include left
+        if(root->left)
+        {
+            tempDSLeft = traverse(root->left, sum, ds);
+            sumLeft = tempDSLeft[0].second;
+        }
+        
+        //include right
+        if(root->right)
+        {
+            tempDSRight = traverse(root->left, sum, ds);
+            sumRight = tempDSRight[0].second;
+        }
+        
+        if(sumLeft > sumRight)
+        {
+            tempDSLeft.push_back(pair<root, sumLeft>);
+            return tempDSLeft;
+        }
+        
+        tempDSRight.push_back(pair<root, sumRight>);
+        return tempDSRight;
+    }
+}
+
+ int main()
+ {
+    return 0;         
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ /*
+ 
+ Wending m/c (Coins): 1, 5, 25, -1
+ -1, 1, 5, 25
+ Case1: 
+ currencyValue = 137
+ currencyValueCopy = currencyValue
+ 
+ value = 0, nCoins = 0
+ 
+ */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

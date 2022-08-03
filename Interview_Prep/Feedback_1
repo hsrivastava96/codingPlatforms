@@ -1,0 +1,15 @@
+1. Vibe was not as If you weree really involved in project work, seemed a little mugged up while explaining past work.
+
+2. Time complexity 2^h, but usually in this case height will not be a correct representation
+		- 2^n
+
+Solution Code started 5:27
+
+
+ 4. You should consider trivial edge cases, like root=null
+
+5. Approach towards solution is a bit jumbled, which was leading to miss on few checks and logical error in code,   - Pro point here is firm hold on dry runs, that helped to catch errors
+        - But it worked as a retrospective step
+        - More coding practice is needed
+
+6. Was actively listening  and responding on hints

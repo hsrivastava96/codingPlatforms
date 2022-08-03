@@ -1,0 +1,22 @@
+Start Time: 3:55
+
+
+1. You can cover some high level of points on past task, but don’t go in low details directly, either you ask if they want you to provide details or wait them to ask.
+2. You can directly tell technology and result of your work in introduction
+3. In first two interviews only key points are problems, they will only judge on problem solving and coding skills.
+
+TIme: 4:09
+
+Problem 1:
+
+1. Was able to come up with optimum solution for base problem with correct time complexity.
+2. Missed on an edge case/requirement question at first. Required some hand holding to reach to edge case.
+3. Candidate seemed to have a clearer picture of solution during the discussion, but took more than expected amount of time to code the solution.
+
+Time 4:52
+
+Problem 2:
+1. Was expecting requirement question if diagonal 1’s are also connected
+2. Candidate was able to provide optimum solution to problem.
+
+Time: 5:11

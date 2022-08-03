@@ -1,0 +1,137 @@
+       3
+    2       4
+5       6    
+
+
+Output--> 5,2,3,4
+
+
+M: [(-2, 5), (-1, 2), (0: 3), (1, 4)]
+
+
+
+                            1
+                            
+                2        3       4          5
+            
+            6       7|8    9|10     11|12       13
+            
+struct Node
+{
+    int val;
+    struct Node *c1, *c2, *c3, *c4;   
+};
+typedef struct Node Node;
+
+vector<int> getTopView(Node *root)
+{
+    vector<int> ds;
+    if(!root)
+        return ds;
+    
+    map<int, map<int, Node *>> m;
+    queue<pair<Node*, pair<int, int>>> q;
+    
+    q.push(root, {0, 0});
+    
+    while(!q.empty())
+    {
+        int size = q.size();
+        
+        for(int i = 0; i < size; i++)
+        {
+            auto tempData = q.front();
+            Node *tempNode = tempData.first;
+            int line = tempData.second.first;
+            int level = tempData.second.second;
+            q.pop();
+            
+            if(m.find(line) != m.end())
+            {
+                if(m[line].find(level) != m[line].end())
+                    m[line][level] = NULL;
+//                else
+//                    m[line][level] = tempNode;
+            }
+            else
+                m[line][level] = tempNode;
+                
+            if(tempNode->c1)
+                q.push(tempNode->c1, {line-2, level});
+            if(tempNode->c2)
+                q.push(tempNode->c2, {line-1, level});
+            if(tempNode->c3)
+                q.push(tempNode->c3, {line+1, level});
+            if(tempNode->c4)
+                q.push(tempNode->c4, {line+2, level});
+        }
+        level++;
+    }
+    
+    for(auto it:m)
+    {
+        for(auto it2:it)
+        {
+            if(!m[it][it2])
+                ds.push_back(m[it][it2]->val);
+            else
+                ds.push_back(INT_MIN);
+        }
+    }
+    
+    return ds;
+}
+
+
+
+
+01000010
+11100000
+00000100
+00000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
